@@ -1,0 +1,6 @@
+cradle:
+  cabal:
+    - path: "./src"
+      component: "lib:kma-weather"
+    - path: "./app"
+      component: "exe:kma-weather"
