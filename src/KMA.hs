@@ -1,14 +1,14 @@
 {-# language DerivingStrategies #-}
 
 module KMA
-       ( API
-       , Result(..)
-       , Header(..)
-       , Body(..)
-       , Item(..)
-       , clientApp
-       , test
-       ) where
+  ( API
+  , Result(..)
+  , Header(..)
+  , Body(..)
+  , Item(..)
+  , clientApp
+  , test
+  ) where
 
 
 import Servant hiding (Header)
@@ -26,13 +26,13 @@ import Data.List.NonEmpty ( NonEmpty(..))
 
 type API  = "1360000" :> "VilageFcstInfoService" :> "getVilageFcst"
             :> QueryParam' '[Required] "serviceKey" String
-            :> QueryParam' '[Required] "pageNo" String
-            :> QueryParam' '[Required] "numOfRows" String
-            :> QueryParam' '[Required] "dataType" String
-            :> QueryParam' '[Required] "base_date" String
-            :> QueryParam' '[Required] "base_time" String
-            :> QueryParam' '[Required] "nx" String
-            :> QueryParam' '[Required] "ny" String
+            :> QueryParam' '[Required] "pageNo"     String
+            :> QueryParam' '[Required] "numOfRows"  String
+            :> QueryParam' '[Required] "dataType"   String
+            :> QueryParam' '[Required] "base_date"  String
+            :> QueryParam' '[Required] "base_time"  String
+            :> QueryParam' '[Required] "nx"         String
+            :> QueryParam' '[Required] "ny"         String
             :> Get '[KMAJSON] FcstResp
 
 api :: Proxy API
@@ -89,15 +89,15 @@ data HeaderBody = FcstHeaderBody
 
 data Header = Header
   { resultCode :: String
-  , resultMsg :: String
+  , resultMsg  :: String
   }
   deriving stock (Generic, Show)
 
 data Body = Body
-  { dataType :: String
-  , items :: ItemWrapper
-  , pageNo :: Int
-  , numOfRows :: Int
+  { dataType   :: String
+  , items      :: ItemWrapper
+  , pageNo     :: Int
+  , numOfRows  :: Int
   , totalCount :: Int
   }
   deriving stock (Generic, Show)
@@ -107,14 +107,14 @@ data ItemWrapper = ItemWrapper
   deriving stock (Generic, Show)
 
 data Item = Item
-  { baseDate :: String
-  , baseTime :: String
-  , category :: String
-  , fcstDate :: String
-  , fcstTime :: String
+  { baseDate  :: String
+  , baseTime  :: String
+  , category  :: String
+  , fcstDate  :: String
+  , fcstTime  :: String
   , fcstValue :: String
-  , nx :: Int
-  , ny :: Int
+  , nx        :: Int
+  , ny        :: Int
   }
   deriving stock (Generic, Show)
 
