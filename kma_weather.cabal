@@ -77,7 +77,7 @@ executable kma-weather
                        -rtsopts
                        -with-rtsopts=-N
 
-test-suite foobar-test
+test-suite kma-weather-test
   import:              common-options
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test

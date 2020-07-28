@@ -13,15 +13,15 @@ module KMA
 
 import Servant hiding (Header)
 import Servant.Client
-import qualified Servant.Client.Core as SC
+-- import qualified Servant.Client.Core as SC
 import Servant.API.ContentTypes
 import Data.Aeson
 import GHC.Generics
-import Network.HTTP.Client (newManager, defaultManagerSettings, Request, requestHeaders)
+import Network.HTTP.Client (newManager, defaultManagerSettings)
 import qualified Data.Text       as T
 import qualified Data.Text.IO    as T
-import qualified Data.Text.Encoding    as T
-import qualified Data.ByteString.Char8 as B
+-- import qualified Data.Text.Encoding    as T
+-- import qualified Data.ByteString.Char8 as B
 import Data.List.NonEmpty ( NonEmpty(..))
 
 type API  = "1360000" :> "VilageFcstInfoService" :> "getVilageFcst"

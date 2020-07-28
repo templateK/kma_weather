@@ -4,3 +4,5 @@ cradle:
       component: "lib:kma-weather"
     - path: "./app"
       component: "exe:kma-weather"
+    - path: "./test"
+      component: "tst:kma-weather-test"
